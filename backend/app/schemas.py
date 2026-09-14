@@ -10,6 +10,11 @@ class ClipInfo(BaseModel):
     generator_type: str
     duration_s: float
     url: str
+    caller_name: str | None = None
+    phone_number: str | None = None
+    scenario: str | None = None
+    threat_level: str | None = None
+    avatar: str | None = None
 
 
 class ClipsResponse(BaseModel):

@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 import soundfile as sf
 import torch
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.staticfiles import StaticFiles
 
 from . import classifier, chunking, prism
@@ -79,8 +79,35 @@ def list_clips() -> ClipsResponse:
             generator_type=meta.get("generator_type", "unknown"),
             duration_s=float(meta.get("duration_s", 0.0)),
             url=f"/audio/{Path(meta.get('filename', '')).name}",
+            caller_name=meta.get("caller_name"),
+            phone_number=meta.get("phone_number"),
+            scenario=meta.get("scenario"),
+            threat_level=meta.get("threat_level"),
+            avatar=meta.get("avatar"),
         )
         for cid, meta in sorted(_labels.items())
+    ]
+    return ClipsResponse(clips=clips)
+
+
+@app.get("/eval-clips", response_model=ClipsResponse)
+def list_eval_clips() -> ClipsResponse:
+    if not _eval_labels:
+        return ClipsResponse(clips=[])
+    clips = [
+        ClipInfo(
+            id=cid,
+            label=meta.get("label", "unknown"),
+            generator_type=meta.get("generator_type", "unknown"),
+            duration_s=float(meta.get("duration_s", 0.0)),
+            url=f"/heldout-audio/{Path(meta.get('filename', '')).name}",
+            caller_name=f"Eval Clip: {cid.replace('eval_', '')}",
+            phone_number="+1 (555) ASV-EVAL",
+            scenario=f"ASVspoof 2019 Eval utterance ({meta.get('generator_type')})",
+            threat_level="CRITICAL_RISK" if meta.get("label") == "synthetic" else "VERIFIED_HUMAN",
+            avatar="test",
+        )
+        for cid, meta in sorted(_eval_labels.items())
     ]
     return ClipsResponse(clips=clips)
 
@@ -92,9 +119,31 @@ def start_call_session() -> CallSessionResponse:
     return CallSessionResponse(session_id=session_id, agent_id=AGENT_ID)
 
 
-# Serve clip audio files at /audio/<filename> for frontend playback.
+# Serve clip audio files for frontend playback.
 if CLIPS_DIR.exists():
     app.mount("/audio", StaticFiles(directory=str(CLIPS_DIR)), name="audio")
+
+if HELDOUT_AUDIO_DIR.exists():
+    app.mount("/heldout-audio", StaticFiles(directory=str(HELDOUT_AUDIO_DIR)), name="heldout_audio")
+
+
+@app.post("/classify-upload")
+async def classify_upload(file: UploadFile = File(...)):
+    content = await file.read()
+    t0 = time.perf_counter()
+    waveform_np, sample_rate = sf.read(io.BytesIO(content), dtype="float32", always_2d=True)
+    waveform = torch.from_numpy(waveform_np.T)
+    is_synthetic, confidence = classifier.classify(waveform, sample_rate)
+    latency_ms = int((time.perf_counter() - t0) * 1000)
+    duration_s = round(waveform.shape[-1] / sample_rate, 2)
+    return {
+        "filename": file.filename,
+        "duration_s": duration_s,
+        "is_synthetic": is_synthetic,
+        "confidence": confidence,
+        "latency_ms": latency_ms,
+        "prediction": "synthetic" if is_synthetic else "real",
+    }
 
 
 @app.post("/classify-chunk", response_model=ClassifyChunkResponse)

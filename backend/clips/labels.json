@@ -6,7 +6,12 @@
       "generator_type": "human",
       "filename": "demo_real_LA_E_7141383.wav",
       "duration_s": 4.35,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Dr. Sarah Jenkins",
+      "phone_number": "+1 (415) 555-2041",
+      "scenario": "Clinic Appointment Confirmation",
+      "threat_level": "VERIFIED_HUMAN",
+      "avatar": "doctor"
     },
     {
       "id": "demo_synthetic_LA_E_2864414",
@@ -14,7 +19,12 @@
       "generator_type": "attack_A08",
       "filename": "demo_synthetic_LA_E_2864414.wav",
       "duration_s": 2.73,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Executive CFO Urgent Wire",
+      "phone_number": "+1 (212) 555-0199",
+      "scenario": "Deepfake CEO demanding immediate confidential wire transfer",
+      "threat_level": "CRITICAL_RISK",
+      "avatar": "executive"
     },
     {
       "id": "demo_synthetic_LA_E_8585851",
@@ -22,7 +32,12 @@
       "generator_type": "attack_A08",
       "filename": "demo_synthetic_LA_E_8585851.wav",
       "duration_s": 1.41,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Grandchild Emergency Bail Scam",
+      "phone_number": "+1 (312) 555-4109",
+      "scenario": "Cloned juvenile voice claiming arrest, begging for bail funds",
+      "threat_level": "CRITICAL_RISK",
+      "avatar": "emergency"
     },
     {
       "id": "demo_real_LA_E_5826594",
@@ -30,7 +45,12 @@
       "generator_type": "human",
       "filename": "demo_real_LA_E_5826594.wav",
       "duration_s": 5.85,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Mom (Personal Mobile)",
+      "phone_number": "+1 (510) 555-8912",
+      "scenario": "Weekend family check-in call",
+      "threat_level": "VERIFIED_HUMAN",
+      "avatar": "family"
     },
     {
       "id": "demo_synthetic_LA_E_2839569",
@@ -38,7 +58,12 @@
       "generator_type": "attack_A07",
       "filename": "demo_synthetic_LA_E_2839569.wav",
       "duration_s": 2.0,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Chase Fraud Security Alert",
+      "phone_number": "+1 (888) 441-2090",
+      "scenario": "AI voice robocall prompting for 2-factor SMS security code",
+      "threat_level": "HIGH_RISK",
+      "avatar": "bank"
     },
     {
       "id": "demo_real_LA_E_9104242",
@@ -46,7 +71,12 @@
       "generator_type": "human",
       "filename": "demo_real_LA_E_9104242.wav",
       "duration_s": 5.55,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "David Miller (Engineering Lead)",
+      "phone_number": "+1 (206) 555-4491",
+      "scenario": "Work sync regarding architecture review",
+      "threat_level": "VERIFIED_HUMAN",
+      "avatar": "work"
     },
     {
       "id": "demo_synthetic_LA_E_4772817",
@@ -54,7 +84,12 @@
       "generator_type": "attack_A08",
       "filename": "demo_synthetic_LA_E_4772817.wav",
       "duration_s": 1.73,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "IRS Tax Enforcement Threat",
+      "phone_number": "+1 (202) 555-0143",
+      "scenario": "Synthetic agent threatening police dispatch unless paid via gift cards",
+      "threat_level": "HIGH_RISK",
+      "avatar": "tax"
     },
     {
       "id": "demo_synthetic_LA_E_3405320",
@@ -62,7 +97,12 @@
       "generator_type": "attack_A07",
       "filename": "demo_synthetic_LA_E_3405320.wav",
       "duration_s": 3.1,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Amazon Security Refund Desk",
+      "phone_number": "+1 (866) 216-1072",
+      "scenario": "Fabricated unauthorized MacBook purchase, urging screen share",
+      "threat_level": "HIGH_RISK",
+      "avatar": "shopping"
     },
     {
       "id": "demo_real_LA_E_6411489",
@@ -70,7 +110,12 @@
       "generator_type": "human",
       "filename": "demo_real_LA_E_6411489.wav",
       "duration_s": 2.09,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "CVS Pharmacy Prescription Desk",
+      "phone_number": "+1 (415) 555-3390",
+      "scenario": "Prescription refill confirmation ready for pickup",
+      "threat_level": "VERIFIED_HUMAN",
+      "avatar": "pharmacy"
     },
     {
       "id": "demo_real_LA_E_2135071",
@@ -78,7 +123,12 @@
       "generator_type": "human",
       "filename": "demo_real_LA_E_2135071.wav",
       "duration_s": 2.94,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Wells Fargo Official Customer Line",
+      "phone_number": "+1 (800) 869-3557",
+      "scenario": "Verified customer representative verifying debit card activation",
+      "threat_level": "VERIFIED_HUMAN",
+      "avatar": "bank"
     },
     {
       "id": "demo_real_LA_E_9617604",
@@ -86,7 +136,12 @@
       "generator_type": "human",
       "filename": "demo_real_LA_E_9617604.wav",
       "duration_s": 4.05,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Emma Watson (Personal Friend)",
+      "phone_number": "+1 (650) 555-7721",
+      "scenario": "Confirming weekend dinner plans and meetup location",
+      "threat_level": "VERIFIED_HUMAN",
+      "avatar": "friend"
     },
     {
       "id": "demo_real_LA_E_9688311",
@@ -94,7 +149,12 @@
       "generator_type": "human",
       "filename": "demo_real_LA_E_9688311.wav",
       "duration_s": 2.05,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "United Airlines Customer Care",
+      "phone_number": "+1 (800) 864-8331",
+      "scenario": "Flight status gate departure notification",
+      "threat_level": "VERIFIED_HUMAN",
+      "avatar": "airline"
     },
     {
       "id": "demo_synthetic_LA_E_1002394",
@@ -102,7 +162,12 @@
       "generator_type": "attack_A08",
       "filename": "demo_synthetic_LA_E_1002394.wav",
       "duration_s": 0.86,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Coinbase Security Verification",
+      "phone_number": "+1 (888) 908-7930",
+      "scenario": "Phishing call requesting authorization seed phrase",
+      "threat_level": "CRITICAL_RISK",
+      "avatar": "crypto"
     },
     {
       "id": "demo_real_LA_E_8370531",
@@ -110,7 +175,12 @@
       "generator_type": "human",
       "filename": "demo_real_LA_E_8370531.wav",
       "duration_s": 4.04,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Skyline Apartments Property Office",
+      "phone_number": "+1 (415) 555-9011",
+      "scenario": "Maintenance scheduling confirmation for package delivery",
+      "threat_level": "VERIFIED_HUMAN",
+      "avatar": "home"
     },
     {
       "id": "demo_synthetic_LA_E_6780294",
@@ -118,7 +188,12 @@
       "generator_type": "attack_A07",
       "filename": "demo_synthetic_LA_E_6780294.wav",
       "duration_s": 2.68,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Medicare Benefits Assistance",
+      "phone_number": "+1 (800) 555-CARE",
+      "scenario": "Senior citizen scam attempting to extract Social Security numbers",
+      "threat_level": "HIGH_RISK",
+      "avatar": "medical"
     },
     {
       "id": "demo_synthetic_LA_E_3960040",
@@ -126,7 +201,12 @@
       "generator_type": "attack_A07",
       "filename": "demo_synthetic_LA_E_3960040.wav",
       "duration_s": 1.35,
-      "run_version": "demo"
+      "run_version": "demo",
+      "caller_name": "Microsoft Certified Tech Support",
+      "phone_number": "+1 (877) 555-0182",
+      "scenario": "Fake Trojan warning attempting to install remote Trojan software",
+      "threat_level": "HIGH_RISK",
+      "avatar": "tech"
     }
   ]
 }

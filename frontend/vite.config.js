@@ -15,6 +15,7 @@ export default defineConfig({
       },
       // clip audio served by the backend at /audio
       '/audio': 'http://127.0.0.1:8000',
+      '/heldout-audio': 'http://127.0.0.1:8000',
     },
   },
 })

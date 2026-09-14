@@ -36,3 +36,20 @@ export function classifyChunk({ clipId, sessionId, chunkIndex, offsetS, duration
     }),
   })
 }
+
+export function fetchEvalClips() {
+  return jsonFetch(`${API}/eval-clips`)
+}
+
+export async function uploadAndClassify(file) {
+  const formData = new FormData()
+  formData.append('file', file)
+  const res = await fetch(`${API}/classify-upload`, {
+    method: 'POST',
+    body: formData,
+  })
+  if (!res.ok) {
+    throw new Error(`Upload failed: ${res.statusText}`)
+  }
+  return res.json()
+}
